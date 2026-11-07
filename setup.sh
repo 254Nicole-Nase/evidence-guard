@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# EvidenceGuard: one-time setup (run from inside your evidence-guard folder)
+# EvidenceGuard: one-time setup
+#   git clone https://github.com/254Nicole-Nase/evidence-guard && cd evidence-guard && bash setup.sh
 set -e
 
 # 1. Python environment
@@ -19,8 +20,3 @@ python -c "import nltk; nltk.download('punkt'); nltk.download('punkt_tab')"
 # 4. Sanity checks
 python inspect_ragtruth.py data/RAGTruth/dataset
 python check_models.py
-
-# 5. Git
-git init
-git add README.md setup.sh inspect_ragtruth.py check_models.py .gitignore
-git commit -m "Pre-sprint setup: environment, data inspection, model load check"
