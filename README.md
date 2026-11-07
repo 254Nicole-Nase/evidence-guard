@@ -11,6 +11,7 @@ Apart Research AI x Epistemics sprint, 13–15 November 2026.
 - Environment setup (`setup.sh`)
 - RAGTruth download and schema inspection (`inspect_ragtruth.py`)
 - Model load check on 5 example sentences (`check_models.py`)
+- Written plan for the method (`METHODS.md`)
 
 Everything else (sentence-span aligner, the three methods, experiments,
 analysis and report) was built during the sprint.

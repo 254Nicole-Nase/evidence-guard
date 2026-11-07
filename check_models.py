@@ -11,7 +11,9 @@ claims = [
 ]
 
 nli = CrossEncoder("cross-encoder/nli-deberta-v3-base")
-labels = ["contradiction", "entailment", "neutral"]   # this model's label order
+id2label = nli.model.config.id2label   # read label order from the model itself
+labels = [id2label[i].lower() for i in range(len(id2label))]
+print("label order:", labels)
 emb = SentenceTransformer("BAAI/bge-base-en-v1.5")
 
 p_vec = emb.encode(premise, normalize_embeddings=True)
