@@ -1,0 +1,651 @@
+{
+  "n_eval": 69217,
+  "eval_prevalence": 0.08206076541889998,
+  "thresholds": {
+    "f1_best_on_dev": {
+      "cosine": 0.7025750534158,
+      "nli": 0.0015706584090360001,
+      "nli_e_minus_c": 0.0011985491826446008
+    },
+    "fpr10_on_dev": {
+      "cosine": 0.545800387859344,
+      "nli": 0.0005257610464460001,
+      "nli_e_minus_c": -0.9083269257098441
+    }
+  },
+  "overall": {
+    "cosine": {
+      "auroc": 0.5690468936587244,
+      "avg_precision": 0.092249945757378,
+      "at_f1_threshold": {
+        "precision": 0.10213278187598383,
+        "recall": 0.5825704225352113,
+        "f1": 0.17379658079256285,
+        "fpr": 0.4578434612902718,
+        "flagged_share": 0.468078651198405
+      },
+      "at_fpr10_threshold": {
+        "precision": 0.08048132520706361,
+        "recall": 0.09066901408450705,
+        "f1": 0.08527195959930459,
+        "fpr": 0.09260745707225711,
+        "flagged_share": 0.09244838695696143
+      }
+    },
+    "nli": {
+      "auroc": 0.7164421731531831,
+      "avg_precision": 0.1575321824650417,
+      "at_f1_threshold": {
+        "precision": 0.16617743964536033,
+        "recall": 0.48838028169014086,
+        "f1": 0.24797747284673494,
+        "fpr": 0.21906920377103106,
+        "flagged_share": 0.2411690769608622
+      },
+      "at_fpr10_threshold": {
+        "precision": 0.1949217748140549,
+        "recall": 0.2676056338028169,
+        "f1": 0.22555275263392194,
+        "fpr": 0.09880856823583109,
+        "flagged_share": 0.1126601846367222
+      }
+    },
+    "nli_e_minus_c": {
+      "auroc": 0.6640771724005997,
+      "avg_precision": 0.11875150300101948,
+      "at_f1_threshold": {
+        "precision": 0.13264050764050764,
+        "recall": 0.7213028169014084,
+        "f1": 0.22407569459636842,
+        "fpr": 0.42165982026220944,
+        "flagged_share": 0.44624875391883495
+      },
+      "at_fpr10_threshold": {
+        "precision": 0.12442510876320696,
+        "recall": 0.17623239436619717,
+        "f1": 0.14586520947176684,
+        "fpr": 0.11086453562491147,
+        "flagged_share": 0.1162286721470159
+      }
+    }
+  },
+  "by_task": {
+    "QA": {
+      "n": 43389,
+      "positives": 4023,
+      "prevalence": 0.09271935283136279,
+      "cosine": {
+        "auroc": 0.5757874730587189,
+        "avg_precision": 0.10549107536595331,
+        "recall_at_fpr10": 0.11881680338056178
+      },
+      "nli": {
+        "auroc": 0.7279958937526687,
+        "avg_precision": 0.17383436341794042,
+        "recall_at_fpr10": 0.26124782500621424
+      },
+      "nli_e_minus_c": {
+        "auroc": 0.6561914939915988,
+        "avg_precision": 0.1269739384723083,
+        "recall_at_fpr10": 0.19736515038528463
+      }
+    },
+    "Summary": {
+      "n": 25828,
+      "positives": 1657,
+      "prevalence": 0.06415518042434568,
+      "cosine": {
+        "auroc": 0.5364469264916358,
+        "avg_precision": 0.06649678666874571,
+        "recall_at_fpr10": 0.022329511164755584
+      },
+      "nli": {
+        "auroc": 0.7082357180146776,
+        "avg_precision": 0.1442452601916519,
+        "recall_at_fpr10": 0.2830416415208208
+      },
+      "nli_e_minus_c": {
+        "auroc": 0.6724997538784401,
+        "avg_precision": 0.10387725871555212,
+        "recall_at_fpr10": 0.12492456246228123
+      }
+    }
+  },
+  "by_length": {
+    "1-5": {
+      "n": 13282,
+      "positives": 1048,
+      "prevalence": 0.0789037795512724,
+      "cosine": {
+        "auroc": 0.5162604108559926,
+        "avg_precision": 0.07834172586685656,
+        "recall_at_fpr10": 0.3377862595419847
+      },
+      "nli": {
+        "auroc": 0.5498757451701989,
+        "avg_precision": 0.08552570634886165,
+        "recall_at_fpr10": 0.15744274809160305
+      },
+      "nli_e_minus_c": {
+        "auroc": 0.5668772314548243,
+        "avg_precision": 0.09058520935235549,
+        "recall_at_fpr10": 0.3187022900763359
+      }
+    },
+    "6-11": {
+      "n": 9921,
+      "positives": 584,
+      "prevalence": 0.058865033766757384,
+      "cosine": {
+        "auroc": 0.5637937370983904,
+        "avg_precision": 0.061828997093024224,
+        "recall_at_fpr10": 0.07705479452054795
+      },
+      "nli": {
+        "auroc": 0.6958703662406598,
+        "avg_precision": 0.09542640061865904,
+        "recall_at_fpr10": 0.2705479452054795
+      },
+      "nli_e_minus_c": {
+        "auroc": 0.6516964287024227,
+        "avg_precision": 0.0794833531927913,
+        "recall_at_fpr10": 0.2226027397260274
+      }
+    },
+    "12-19": {
+      "n": 22674,
+      "positives": 1759,
+      "prevalence": 0.07757784246273265,
+      "cosine": {
+        "auroc": 0.6556632961836786,
+        "avg_precision": 0.12581327426088826,
+        "recall_at_fpr10": 0.04832291074474133
+      },
+      "nli": {
+        "auroc": 0.7747275206489028,
+        "avg_precision": 0.2217356600237789,
+        "recall_at_fpr10": 0.3320068220579875
+      },
+      "nli_e_minus_c": {
+        "auroc": 0.720241463015859,
+        "avg_precision": 0.1484709550020004,
+        "recall_at_fpr10": 0.16372939169982945
+      }
+    },
+    "20-34": {
+      "n": 21232,
+      "positives": 2053,
+      "prevalence": 0.09669366993217784,
+      "cosine": {
+        "auroc": 0.6268403446119819,
+        "avg_precision": 0.1517571921825907,
+        "recall_at_fpr10": 0.01509985387238188
+      },
+      "nli": {
+        "auroc": 0.7555625423132497,
+        "avg_precision": 0.22104564853182182,
+        "recall_at_fpr10": 0.28153921091086215
+      },
+      "nli_e_minus_c": {
+        "auroc": 0.7106972466714296,
+        "avg_precision": 0.1648192307550285,
+        "recall_at_fpr10": 0.11446663419386265
+      }
+    },
+    "35+": {
+      "n": 2108,
+      "positives": 236,
+      "prevalence": 0.11195445920303605,
+      "cosine": {
+        "auroc": 0.5690234318412285,
+        "avg_precision": 0.1345206184577861,
+        "recall_at_fpr10": 0.0
+      },
+      "nli": {
+        "auroc": 0.6760692814718239,
+        "avg_precision": 0.1816006016785361,
+        "recall_at_fpr10": 0.1483050847457627
+      },
+      "nli_e_minus_c": {
+        "auroc": 0.6593125271621034,
+        "avg_precision": 0.16290372797196342,
+        "recall_at_fpr10": 0.059322033898305086
+      }
+    }
+  },
+  "by_overlap_all": {
+    "<50%": {
+      "n": 19606,
+      "positives": 3347,
+      "prevalence": 0.17071304702642048,
+      "cosine": {
+        "auroc": 0.4912111373567034,
+        "avg_precision": 0.15335401992769576,
+        "recall_at_fpr10": 0.1096504332237825
+      },
+      "nli": {
+        "auroc": 0.6312024966044409,
+        "avg_precision": 0.21922353054094934,
+        "recall_at_fpr10": 0.3492680011951001
+      },
+      "nli_e_minus_c": {
+        "auroc": 0.5801121790963956,
+        "avg_precision": 0.1842353421631458,
+        "recall_at_fpr10": 0.16970421272781597
+      }
+    },
+    "50-70%": {
+      "n": 14075,
+      "positives": 1182,
+      "prevalence": 0.08397868561278864,
+      "cosine": {
+        "auroc": 0.5301477224422859,
+        "avg_precision": 0.09181050270331201,
+        "recall_at_fpr10": 0.017766497461928935
+      },
+      "nli": {
+        "auroc": 0.7003693881292633,
+        "avg_precision": 0.16616436528207373,
+        "recall_at_fpr10": 0.19543147208121828
+      },
+      "nli_e_minus_c": {
+        "auroc": 0.6995599469432316,
+        "avg_precision": 0.16332816751299328,
+        "recall_at_fpr10": 0.17258883248730963
+      }
+    },
+    "70-85%": {
+      "n": 11709,
+      "positives": 484,
+      "prevalence": 0.04133572465624733,
+      "cosine": {
+        "auroc": 0.4924171252922012,
+        "avg_precision": 0.04203767331554574,
+        "recall_at_fpr10": 0.006198347107438017
+      },
+      "nli": {
+        "auroc": 0.6904106462478603,
+        "avg_precision": 0.09634537235224903,
+        "recall_at_fpr10": 0.11776859504132231
+      },
+      "nli_e_minus_c": {
+        "auroc": 0.7008588415026966,
+        "avg_precision": 0.09587808014692566,
+        "recall_at_fpr10": 0.1590909090909091
+      }
+    },
+    ">=85%": {
+      "n": 23827,
+      "positives": 667,
+      "prevalence": 0.02799345280564066,
+      "cosine": {
+        "auroc": 0.6544502360218855,
+        "avg_precision": 0.04631196371569101,
+        "recall_at_fpr10": 0.18590704647676162
+      },
+      "nli": {
+        "auroc": 0.6023810309870972,
+        "avg_precision": 0.03635055596596358,
+        "recall_at_fpr10": 0.0944527736131934
+      },
+      "nli_e_minus_c": {
+        "auroc": 0.6212209957197568,
+        "avg_precision": 0.040480316339197575,
+        "recall_at_fpr10": 0.22788605697151423
+      }
+    }
+  },
+  "by_overlap_min6words": {
+    "<50%": {
+      "n": 15986,
+      "positives": 2819,
+      "prevalence": 0.17634179907418993,
+      "cosine": {
+        "auroc": 0.5279893408475772,
+        "avg_precision": 0.17180924237742357,
+        "recall_at_fpr10": 0.05108194395175594
+      },
+      "nli": {
+        "auroc": 0.6557197006404452,
+        "avg_precision": 0.23785066114369757,
+        "recall_at_fpr10": 0.3788577509755232
+      },
+      "nli_e_minus_c": {
+        "auroc": 0.6063040204486405,
+        "avg_precision": 0.2003226004107595,
+        "recall_at_fpr10": 0.13338063142958495
+      }
+    },
+    "50-70%": {
+      "n": 13733,
+      "positives": 1133,
+      "prevalence": 0.08250200247578825,
+      "cosine": {
+        "auroc": 0.5267717395872735,
+        "avg_precision": 0.08866662595586412,
+        "recall_at_fpr10": 0.01235657546337158
+      },
+      "nli": {
+        "auroc": 0.703282618136987,
+        "avg_precision": 0.16775483649533104,
+        "recall_at_fpr10": 0.19593998234774934
+      },
+      "nli_e_minus_c": {
+        "auroc": 0.7005943624875663,
+        "avg_precision": 0.16395012079133212,
+        "recall_at_fpr10": 0.17299205648720212
+      }
+    },
+    "70-85%": {
+      "n": 11575,
+      "positives": 470,
+      "prevalence": 0.04060475161987041,
+      "cosine": {
+        "auroc": 0.48783871554887104,
+        "avg_precision": 0.04036227114327666,
+        "recall_at_fpr10": 0.002127659574468085
+      },
+      "nli": {
+        "auroc": 0.6888129747957121,
+        "avg_precision": 0.09592176612649105,
+        "recall_at_fpr10": 0.11914893617021277
+      },
+      "nli_e_minus_c": {
+        "auroc": 0.6991847643863698,
+        "avg_precision": 0.09451602117960906,
+        "recall_at_fpr10": 0.1574468085106383
+      }
+    },
+    ">=85%": {
+      "n": 14641,
+      "positives": 210,
+      "prevalence": 0.014343282562666485,
+      "cosine": {
+        "auroc": 0.5196171601479619,
+        "avg_precision": 0.015949923149227437,
+        "recall_at_fpr10": 0.009523809523809525
+      },
+      "nli": {
+        "auroc": 0.559813529735919,
+        "avg_precision": 0.017382102593550882,
+        "recall_at_fpr10": 0.04285714285714286
+      },
+      "nli_e_minus_c": {
+        "auroc": 0.5748977894809785,
+        "avg_precision": 0.018636555068168397,
+        "recall_at_fpr10": 0.1
+      }
+    }
+  },
+  "by_label_type": {
+    "Evident Conflict": {
+      "n": 1011,
+      "cosine": {
+        "auroc": 0.4688314356641683,
+        "avg_precision": 0.013471501623577447,
+        "recall_at_fpr10": 0.032640949554896145
+      },
+      "nli": {
+        "auroc": 0.618886100573002,
+        "avg_precision": 0.022840044922205816,
+        "recall_at_fpr10": 0.17705242334322452
+      },
+      "nli_e_minus_c": {
+        "auroc": 0.628993959717888,
+        "avg_precision": 0.023540942772216623,
+        "recall_at_fpr10": 0.19584569732937684
+      }
+    },
+    "Subtle Conflict": {
+      "n": 121,
+      "cosine": {
+        "auroc": 0.43830997413233674,
+        "avg_precision": 0.0015552373982934582,
+        "recall_at_fpr10": 0.01652892561983471
+      },
+      "nli": {
+        "auroc": 0.579435201223937,
+        "avg_precision": 0.0024538657394283917,
+        "recall_at_fpr10": 0.15702479338842976
+      },
+      "nli_e_minus_c": {
+        "auroc": 0.5475447572228689,
+        "avg_precision": 0.0020797635939637416,
+        "recall_at_fpr10": 0.09917355371900827
+      }
+    },
+    "Evident Baseless Info": {
+      "n": 3596,
+      "cosine": {
+        "auroc": 0.6132645652783959,
+        "avg_precision": 0.06893160729611068,
+        "recall_at_fpr10": 0.11763070077864293
+      },
+      "nli": {
+        "auroc": 0.7485966809771252,
+        "avg_precision": 0.11784276664399768,
+        "recall_at_fpr10": 0.300055617352614
+      },
+      "nli_e_minus_c": {
+        "auroc": 0.6839574137413702,
+        "avg_precision": 0.08200149683436635,
+        "recall_at_fpr10": 0.18131256952169078
+      }
+    },
+    "Subtle Baseless Info": {
+      "n": 1031,
+      "cosine": {
+        "auroc": 0.516532192526966,
+        "avg_precision": 0.015608381101700042,
+        "recall_at_fpr10": 0.055286129970902036
+      },
+      "nli": {
+        "auroc": 0.7170898092219558,
+        "avg_precision": 0.03258726768359118,
+        "recall_at_fpr10": 0.24733268671193018
+      },
+      "nli_e_minus_c": {
+        "auroc": 0.6438744681894648,
+        "avg_precision": 0.02195050870638475,
+        "recall_at_fpr10": 0.15033947623666344
+      }
+    }
+  },
+  "examples_cosine_fooled_nli_catches": [
+    {
+      "example_id": "7305:1",
+      "task_type": "QA",
+      "label": "contradicted",
+      "label_types": [
+        "Evident Conflict"
+      ],
+      "sentence": "* Right now (as of December 7, 2017), there is a 13-hour time difference between Bangkok and Chicago (passage 1).",
+      "overlap_best": 0.8,
+      "cos_max": 0.8846753835678101,
+      "nli_entail": 0.000315100216539,
+      "nli_contra": 0.9984412789344781
+    },
+    {
+      "example_id": "1048:2",
+      "task_type": "Summary",
+      "label": "contradicted",
+      "label_types": [
+        "Evident Conflict"
+      ],
+      "sentence": "Chinese authorities arrested 133,000+ people and seized 43.3 tons of drugs in a 6-month anti-drug campaign, with 76 officers killed or injured.",
+      "overlap_best": 0.7222222222222221,
+      "cos_max": 0.88147747516632,
+      "nli_entail": 0.00014802083023800002,
+      "nli_contra": 0.0010199635289600002
+    },
+    {
+      "example_id": "10840:4",
+      "task_type": "QA",
+      "label": "unsupported",
+      "label_types": [
+        "Evident Baseless Info"
+      ],
+      "sentence": "The TLC Diet: An all-around healthy eating plan that promotes eating plenty of fruits, vegetables, whole grains, fish, and lean meats, which can help reduce the risk of heart disease and stroke.",
+      "overlap_best": 0.75,
+      "cos_max": 0.8776612877845761,
+      "nli_entail": 0.00012826090096400002,
+      "nli_contra": 0.021278051659464
+    },
+    {
+      "example_id": "10395:2",
+      "task_type": "QA",
+      "label": "unsupported",
+      "label_types": [
+        "Evident Baseless Info"
+      ],
+      "sentence": "Sip a clean swab of cotton in tea tree oil and apply it on the pimples before going to bed (Passage 1).",
+      "overlap_best": 0.7142857142857141,
+      "cos_max": 0.8736931085586541,
+      "nli_entail": 0.00041605066508000003,
+      "nli_contra": 0.9894852042198181
+    },
+    {
+      "example_id": "1665:1",
+      "task_type": "Summary",
+      "label": "unsupported",
+      "label_types": [
+        "Evident Baseless Info"
+      ],
+      "sentence": "Adrian Peterson, a Minnesota Vikings running back, will be reinstated to the NFL on Friday after serving a 15-month suspension for disciplining his 4-year-old son with a switch.",
+      "overlap_best": 0.7272727272727271,
+      "cos_max": 0.8585761785507201,
+      "nli_entail": 0.000506363052409,
+      "nli_contra": 0.004171811975538
+    },
+    {
+      "example_id": "1598:0",
+      "task_type": "Summary",
+      "label": "unsupported",
+      "label_types": [
+        "Evident Baseless Info"
+      ],
+      "sentence": "Richie Benaud, a former Australia cricket captain and legendary broadcaster, passed away on March 8 at the age of 84.",
+      "overlap_best": 0.7142857142857141,
+      "cos_max": 0.8585044741630551,
+      "nli_entail": 0.00044367101509100004,
+      "nli_contra": 0.000291058153379
+    },
+    {
+      "example_id": "1748:0",
+      "task_type": "Summary",
+      "label": "unsupported",
+      "label_types": [
+        "Evident Baseless Info"
+      ],
+      "sentence": "Canadian fighter jets bombed an ISIS garrison in Syria in the group's de facto capital of Raqqa in a successful airstrike that killed thousands of people.",
+      "overlap_best": 0.777777777777777,
+      "cos_max": 0.8576718568801881,
+      "nli_entail": 0.000203817326109,
+      "nli_contra": 0.000186325967661
+    },
+    {
+      "example_id": "5398:1",
+      "task_type": "Summary",
+      "label": "unsupported",
+      "label_types": [
+        "Evident Baseless Info"
+      ],
+      "sentence": "Alexis Ware, a 29-year-old mother, disappeared in South Carolina on February 18th after dropping off her children at a gas station.",
+      "overlap_best": 0.7222222222222221,
+      "cos_max": 0.8322626352310181,
+      "nli_entail": 0.0005103174480600001,
+      "nli_contra": 0.0060076494701200005
+    },
+    {
+      "example_id": "5589:2",
+      "task_type": "Summary",
+      "label": "unsupported",
+      "label_types": [
+        "Evident Baseless Info"
+      ],
+      "sentence": "According to data from Michigan Advance, the CEOs of General Motors, Stellantis, and Ford made over $20 million each in 2022, while worker wages have only increased by 6% in the same time period.",
+      "overlap_best": 0.72,
+      "cos_max": 0.8314989805221551,
+      "nli_entail": 0.00047504864051,
+      "nli_contra": 0.00011055749928300001
+    },
+    {
+      "example_id": "3588:0",
+      "task_type": "Summary",
+      "label": "unsupported",
+      "label_types": [
+        "Subtle Baseless Info"
+      ],
+      "sentence": "At least 147 people have been killed, and many more injured, in a terrorist attack on Garissa University College, in Kenya.",
+      "overlap_best": 0.7142857142857141,
+      "cos_max": 0.829309403896331,
+      "nli_entail": 0.000360874400939,
+      "nli_contra": 0.001583359320648
+    },
+    {
+      "example_id": "80:0",
+      "task_type": "Summary",
+      "label": "contradicted",
+      "label_types": [
+        "Evident Conflict"
+      ],
+      "sentence": "\"The Price Is Right\" contestant Manuela Arbelaez accidentally reveals the correct answer to a guessing game for a new Hyundai Sonata, resulting in her winning the car.",
+      "overlap_best": 0.777777777777777,
+      "cos_max": 0.828492641448974,
+      "nli_entail": 0.000374792172806,
+      "nli_contra": 0.000365666957804
+    },
+    {
+      "example_id": "1298:1",
+      "task_type": "Summary",
+      "label": "contradicted",
+      "label_types": [
+        "Evident Conflict"
+      ],
+      "sentence": "Valerie Braham of Paris, whose husband was killed in a January attack on a kosher supermarket, now lives in Israel and attends an anniversary ceremony for her late husband.",
+      "overlap_best": 0.7222222222222221,
+      "cos_max": 0.8278821706771851,
+      "nli_entail": 0.000521291047334,
+      "nli_contra": 0.0008204004843710001
+    },
+    {
+      "example_id": "2306:5",
+      "task_type": "Summary",
+      "label": "unsupported",
+      "label_types": [
+        "Evident Baseless Info"
+      ],
+      "sentence": "In 2012, 18 percent of Americans were considered binge drinkers, up from 14 percent in 2005.",
+      "overlap_best": 0.8,
+      "cos_max": 0.824356198310852,
+      "nli_entail": 0.000348677072906,
+      "nli_contra": 0.00039108918281200003
+    },
+    {
+      "example_id": "10803:4",
+      "task_type": "QA",
+      "label": "contradicted",
+      "label_types": [
+        "Evident Conflict"
+      ],
+      "sentence": "Apple was incorporated on January 3, 1977, by Steve Jobs, Steve Wozniak, and Ronald Wayne.",
+      "overlap_best": 0.8,
+      "cos_max": 0.8189178705215451,
+      "nli_entail": 0.000209209669264,
+      "nli_contra": 0.9998177886009211
+    },
+    {
+      "example_id": "5968:14",
+      "task_type": "QA",
+      "label": "unsupported",
+      "label_types": [
+        "Subtle Baseless Info"
+      ],
+      "sentence": "Alternatively, you can also update the firmware of your HP printer by going to the manufacturer's website, typing in the model number of your printer, and searching for the latest firmware update.",
+      "overlap_best": 0.777777777777777,
+      "cos_max": 0.818725287914276,
+      "nli_entail": 0.000181223615072,
+      "nli_contra": 0.00046925462083800005
+    }
+  ]
+}

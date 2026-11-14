@@ -1,0 +1,11 @@
+{
+  "sentences": 68249,
+  "cosine_sec": 262.6926843099943,
+  "nli_sec": 2706.166676292997,
+  "cosine_ms_per_sentence": 3.849033455581684,
+  "nli_ms_per_sentence": 39.65137476436281,
+  "top_k": 3,
+  "mock": false,
+  "resumed_run": true,
+  "note": "timings cover this run only"
+}
