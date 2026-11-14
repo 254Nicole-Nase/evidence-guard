@@ -22,6 +22,10 @@ Apart Research AI x Epistemics Research Sprint, 13–15 November 2026
 - NLI's lead grows with word overlap (+0.128 to +0.201 AUROC) but is not
   significant for near-copies with 85%+ overlap (+0.040, CI −0.013 to 0.095).
 
+The exact outputs behind every number in the report are in `results/`
+(`report.json`, `bootstrap_ci.json`, `timing.json`, `auroc_by_overlap.png`).
+The per-sentence `scores.jsonl` (32 MB) is not included; `score_methods.py` regenerates it.
+
 Confidence intervals come from `bootstrap_ci.py` (500 source-level resamples).
 A third score, NLI entailment minus contradiction, is an exploratory heuristic:
 the two maxima are taken separately over the top-3 chunks and can come from
