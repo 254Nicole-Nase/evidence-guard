@@ -22,7 +22,10 @@ Apart Research AI x Epistemics Research Sprint, 13–15 November 2026
 - NLI's lead grows with word overlap (+0.128 to +0.201 AUROC) but is not
   significant for near-copies with 85%+ overlap (+0.040, CI −0.013 to 0.095).
 
-See the report for details and limitations.
+Confidence intervals come from `bootstrap_ci.py` (500 source-level resamples).
+A third score, NLI entailment minus contradiction, is an exploratory heuristic:
+the two maxima are taken separately over the top-3 chunks and can come from
+different chunks. See the report for details and limitations.
 
 ## What was built when
 
@@ -49,6 +52,7 @@ No experiments were run before the sprint.
 Data preparation runs on CPU; scoring needs a GPU (we used a free Colab T4, about 1 hour).
 
 ```bash
+git clone https://github.com/254Nicole-Nase/evidence-guard && cd evidence-guard
 pip install sentence-transformers transformers torch scikit-learn pandas matplotlib
 git clone --depth 1 https://github.com/ParticleMedia/RAGTruth.git data/RAGTruth
 
@@ -62,7 +66,9 @@ python bootstrap_ci.py --scores results/scores.jsonl --sentences prepared/senten
 ```
 
 Expected `prepared/summary.json`: 86,186 sentences (dev 16,969, eval 69,217).
-`--resume` lets the scoring continue after a disconnect.
+`--resume` lets the scoring continue after a disconnect. It refuses to resume if
+`results/run_config.json` shows the earlier scores were made with different models
+or settings (or by `--mock`), so a results folder never mixes runs.
 Outputs: `results/report.json`, `results/bootstrap_ci.json`,
 `results/auroc_by_overlap.png`, `results/timing.json`.
 

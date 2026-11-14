@@ -136,6 +136,17 @@ def main():
     out_dir.mkdir(parents=True, exist_ok=True)
     t_cos = t_nli = 0.0
     scores_path = out_dir / "scores.jsonl"
+    meta_path = out_dir / "run_config.json"
+    config = {"embedding_model": "tfidf-mock" if a.mock else EMB_MODEL,
+              "nli_model": "random-mock" if a.mock else NLI_MODEL,
+              "top_k": a.top_k, "mock": a.mock,
+              "evidence": "prepared/evidence.jsonl" if ev_path.exists() else "built-in chunker"}
+    if a.resume and scores_path.exists():
+        old = json.loads(meta_path.read_text()) if meta_path.exists() else None
+        if old != config:
+            raise SystemExit(f"--resume refused: existing scores were made with {old}, "
+                             f"this run uses {config}. Use a new --out folder.")
+    meta_path.write_text(json.dumps(config, indent=2))
     done = set()
     if a.resume and scores_path.exists():
         lines = scores_path.read_text(encoding="utf-8").splitlines()
@@ -184,6 +195,8 @@ def main():
                     "cos_max": float(sim[r_i].max()),
                     "nli_entail": float(probs[r_i, :, E].max()),
                     "nli_contra": float(probs[r_i, :, C].max()),
+                    # each maximum is taken separately over the top-k chunks, so these
+                    # values can come from different chunks and do not sum to 1
                     "nli_neutral": float(probs[r_i, :, N].min()),
                     "top_chunks": [int(j) for j in top[r_i]],
                     "overlap_top1": overlap(r["sentence"], cs[top[r_i][0]]),

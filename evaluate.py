@@ -22,6 +22,7 @@ from sklearn.metrics import average_precision_score, roc_auc_score
 METHODS = {   # support score: higher = more supported
     "cosine": lambda d: d.cos_max,
     "nli": lambda d: d.nli_entail,
+    # exploratory heuristic: max entailment and max contradiction can come from different chunks
     "nli_e_minus_c": lambda d: d.nli_entail - d.nli_contra,
 }
 OVERLAP_BINS = [0, 0.5, 0.7, 0.85, 1.0001]

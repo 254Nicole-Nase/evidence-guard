@@ -79,14 +79,16 @@ def main():
         for m, vals in boots[g].items():
             v = np.array(vals, float)
             v = v[~np.isnan(v)]
+            ci = [float(np.percentile(v, 2.5)), float(np.percentile(v, 97.5))] if len(v) else [None, None]
             est = point[g]["nli"] - point[g]["cosine"] if m == "nli_minus_cosine" else point[g][m]
-            res[g][m] = {"auroc": float(est), "ci95": [float(np.percentile(v, 2.5)), float(np.percentile(v, 97.5))]}
+            res[g][m] = {"auroc": float(est), "ci95": ci, "valid_resamples": int(len(v))}
     json.dump({"n_boot": a.n_boot, "resampled_unit": "source", "results": res},
               open(Path(a.out) / "bootstrap_ci.json", "w"), indent=2)
 
     print(f"\nAUROC with 95% CI ({a.n_boot} source-level resamples)")
     for g, r in res.items():
-        line = "  ".join(f"{m}={r[m]['auroc']:.3f} [{r[m]['ci95'][0]:.3f},{r[m]['ci95'][1]:.3f}]"
+        fmt = lambda x: "  -  " if x is None or x != x else f"{x:.3f}"
+        line = "  ".join(f"{m}={fmt(r[m]['auroc'])} [{fmt(r[m]['ci95'][0])},{fmt(r[m]['ci95'][1])}]"
                          for m in ["cosine", "nli", "nli_minus_cosine"])
         print(f"{g:<34} n={r['n']:<6} pos={r['positives']:<5} {line}")
 
